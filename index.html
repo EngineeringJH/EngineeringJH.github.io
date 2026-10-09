@@ -121,17 +121,24 @@
 
         <!-- 3. Blog-style Case Study / Project Write-up -->
         <div class="project-body">
-          <span class="project-meta">SolidWorks &bull; 3D Printing &bull; Sheet Metal</span>
-          <h2>Robotic Gripper Mechanism</h2>
+          <span class="project-meta">Siemens NX &bull; 3D Printing &bull; CNC Metal</span>
+          <h2>Dynamic Flight Simulator Controls</h2>
           <p>
-            This mechanism was developed for automated pick-and-place tasks. The goal was to minimize part count 
-            while retaining high torsional rigidity under continuous load.
+            Currently working on converting a Hands-On Throttle and Stick (HOTAS) setup to be Dynamic/Active. 
+            Most products on the market are either Spring-Loaded (return to the "center" of the X-Y axes via a spring calibrated to be at equilibrium in center).
+            An active controller would utilize brushless DC (BLDC) hub motors to generate a force through the controller, simulating the feeling of air over wings or "controller weight" in a cockpit.
+            An example of this would be in a stall. A spring-loaded controller gives no information as to your situation, whereas in an active controller, you could start to feel the loss of control.
+            Imagine driving a car in an infinitely large section of asphalt, but you couldn't feel anything of what the car was doing, you could only see with your eyes. 
+            It would be disorienting! How would you truly know if you're accelerating, or turning, or otherwise? Your eyes do significant work, but look away for too long and now you've lost your way.
+            It is similar in the aviation simulation world, except we accept this as the industry standard for a similar product is $600-2000, and 6-12N of force.
+            I intend to undercut this through the use of DIY, Harvesting of BLDC motors, and the use of free materials from my school to cut down this price to sub-$200.
+            The software for this project is already written by an Open-Source Project known as FFBeast (and their own version of CAD files), But I intend to design my hardware to fit my needs.
           </p>
           <h3>Design Specifications</h3>
           <ul>
             <li><strong>Material:</strong> 6061-T6 Aluminum (CNC) & PETG (Prototype)</li>
-            <li><strong>Actuation:</strong> NEMA 17 Stepper via lead screw</li>
-            <li><strong>Payload Capacity:</strong> 1.2 kg</li>
+            <li><strong>Actuation:</strong> BLDC motors rated at 500W per.</li>
+            <li><strong>Estimated Peak Force:</strong>45 N</li>
           </ul>
           <p>
             You can interact with the 3D model above using left-click to rotate, right-click to pan, and scroll to zoom.
