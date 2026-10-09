@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My CAD & Engineering Portfolio</title>
+  
+  <!-- Google <model-viewer> Web Component -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card-bg: #1a1d24;
+      --text: #e1e4ea;
+      --muted: #9ba1b0;
+      --accent: #2563eb;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #2d3139;
+      padding-bottom: 20px;
+    }
+    h1 { margin-bottom: 8px; font-size: 2rem; }
+    p.subtitle { color: var(--muted); margin: 0; }
+    
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid #2d3139;
+      overflow: hidden;
+      margin-bottom: 40px;
+      padding: 24px;
+    }
+    
+    /* Responsive Video Wrapper (16:9) */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      background: #000;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* 3D Model Viewer Container */
+    model-viewer {
+      width: 100%;
+      height: 450px;
+      background-color: #12141a;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .project-body h2 { margin-top: 0; }
+    .project-meta {
+      display: inline-block;
+      background: #282c37;
+      color: #7dd3fc;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Jane Doe</h1>
+      <p class="subtitle">Mechanical & Industrial Design Portfolio | CAD / CAE / 3D Modeling</p>
+    </header>
+
+    <main>
+      <!-- PROJECT ITEM -->
+      <article class="project-card">
+        <!-- 1. YouTube Video Embed at the Top -->
+        <div class="video-container">
+          <!-- Replace 'dQw4w9WgXcQ' with your YouTube video ID -->
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+            title="Project Demo Video" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- 2. Interactive 3D Model Viewer -->
+        <!-- Replace 'models/sample.glb' with the path to your uploaded .glb file -->
+        <model-viewer 
+          src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+          alt="3D CAD Model of Project" 
+          auto-rotate 
+          camera-controls 
+          shadow-intensity="1"
+          exposure="1.2">
+        </model-viewer>
+
+        <!-- 3. Blog-style Case Study / Project Write-up -->
+        <div class="project-body">
+          <span class="project-meta">SolidWorks &bull; 3D Printing &bull; Sheet Metal</span>
+          <h2>Robotic Gripper Mechanism</h2>
+          <p>
+            This mechanism was developed for automated pick-and-place tasks. The goal was to minimize part count 
+            while retaining high torsional rigidity under continuous load.
+          </p>
+          <h3>Design Specifications</h3>
+          <ul>
+            <li><strong>Material:</strong> 6061-T6 Aluminum (CNC) & PETG (Prototype)</li>
+            <li><strong>Actuation:</strong> NEMA 17 Stepper via lead screw</li>
+            <li><strong>Payload Capacity:</strong> 1.2 kg</li>
+          </ul>
+          <p>
+            You can interact with the 3D model above using left-click to rotate, right-click to pan, and scroll to zoom.
+          </p>
+        </div>
+      </article>
+    </main>
+  </div>
+
+</body>
+</html>
