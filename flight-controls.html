@@ -3,149 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My CAD & Engineering Portfolio</title>
+  <title>Dynamic Flight Simulator Controls | Jacob Henning</title>
   
   <!-- Google <model-viewer> Web Component -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
-  <style>
-    :root {
-      --bg: #0f1117;
-      --card-bg: #1a1d24;
-      --text: #e1e4ea;
-      --muted: #9ba1b0;
-      --accent: #2563eb;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    header {
-      margin-bottom: 40px;
-      border-bottom: 1px solid #2d3139;
-      padding-bottom: 20px;
-    }
-    h1 { margin-bottom: 8px; font-size: 2rem; }
-    p.subtitle { color: var(--muted); margin: 0; }
-    
-    .project-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      border: 1px solid #2d3139;
-      overflow: hidden;
-      margin-bottom: 40px;
-      padding: 24px;
-    }
-    
-    /* Responsive Video Wrapper (16:9) */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      background: #000;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* 3D Model Viewer Container */
-    model-viewer {
-      width: 100%;
-      height: 450px;
-      background-color: #12141a;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-    
-    .project-body h2 { margin-top: 0; }
-    .project-meta {
-      display: inline-block;
-      background: #282c37;
-      color: #7dd3fc;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      margin-bottom: 15px;
-    }
-  </style>
+  <!-- Connects to your shared site styling & sidebar -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>Jacob Henning</h1>
-      <p class="subtitle">Mechanical & Aero Design Portfolio | CAD / CAE / 3D Modeling</p>
-    </header>
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h1><a href="index.html">Jacob Henning</a></h1>
+      <p class="tagline">Purdue University &bull; Mechanical & Aero Design</p>
+    </div>
 
-    <main>
-      <!-- PROJECT ITEM -->
-      <article class="project-card">
+    <nav class="nav-menu">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link">Home / Welcome</a>
+      </div>
 
-        <!-- 1. Interactive 3D Model Viewer -->
-        <!-- Replace 'models/sample.glb' with the path to your uploaded .glb file -->
-        <model-viewer 
-          src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
-          alt="3D CAD Model of Project" 
-          auto-rotate 
-          camera-controls 
-          shadow-intensity="1"
-          exposure="1.2">
-        </model-viewer>
+      <!-- CAD Projects Dropdown (Kept open on this page) -->
+      <details class="nav-dropdown" open>
+        <summary>
+          <span>CAD Projects</span>
+          <span class="dropdown-arrow">&#9654;</span>
+        </summary>
+        <ul class="nav-dropdown-items">
+          <li><a href="cad.html" class="nav-link">&rarr; All CAD Projects</a></li>
+          <!-- Highlighted pill showing current page -->
+          <li><a href="flight-controls.html" class="nav-link active">Flight Sim Controls</a></li>
+        </ul>
+      </details>
 
-        <!-- 2. Blog-style Case Study / Project Write-up -->
-        <div class="project-body">
-          <span class="project-meta">Siemens NX &bull; 3D Printing &bull; CNC Metal</span>
-          <h2>Dynamic Flight Simulator Controls</h2>
-          <p>
-            Currently working on converting a Hands-On Throttle and Stick (HOTAS) setup to be Dynamic/Active. 
-            Most products on the market are either Spring-Loaded (return to the "center" of the X-Y axes via a spring calibrated to be at equilibrium in center).
-            An active controller would utilize brushless DC (BLDC) hub motors to generate a force through the controller, simulating the feeling of air over wings or "controller weight" in a cockpit.
-            An example of this would be in a stall. A spring-loaded controller gives no information as to your situation, whereas in an active controller, you could start to feel the loss of control.
-            Imagine driving a car in an infinitely large section of asphalt, but you couldn't feel anything of what the car was doing, you could only see with your eyes. 
-            It would be disorienting! How would you truly know if you're accelerating, or turning, or otherwise? Your eyes do significant work, but look away for too long and now you've lost your way.
-            It is similar in the aviation simulation world, except we accept this as the industry standard for a similar product is $600-2000, and 6-12N of force.
-            I intend to undercut this through the use of DIY, Harvesting of BLDC motors, and the use of free materials from my school to cut down this price to sub-$200.
-            The software for this project is already written by an Open-Source Project known as FFBeast (and their own version of CAD files), But I intend to design my hardware to fit my needs.
-          </p>
-          <h3>Design Specifications</h3>
-          <ul>
-            <li><strong>Material:</strong> 6061-T6 Aluminum (CNC) & PETG (Prototype)</li>
-            <li><strong>Actuation:</strong> BLDC motors rated at 500W per.</li>
-            <li><strong>Estimated Peak Force:</strong>45 N</li>
-          </ul>
-          <p>
-            You can interact with the 3D model above using left-click to rotate, right-click to pan, and scroll to zoom.
-          </p>
-          <!-- 3. YouTube Video Embed at the Bottom -->
+      <!-- CFD Projects Dropdown -->
+      <details class="nav-dropdown">
+        <summary>
+          <span>CFD Projects</span>
+          <span class="dropdown-arrow">&#9654;</span>
+        </summary>
+        <ul class="nav-dropdown-items">
+          <li><a href="cfd.html" class="nav-link">&rarr; All CFD Projects</a></li>
+          <li><a href="#" class="nav-link">Airfoil Analysis</a></li>
+        </ul>
+      </details>
+
+      <!-- Other Projects Dropdown -->
+      <details class="nav-dropdown">
+        <summary>
+          <span>Other Work</span>
+          <span class="dropdown-arrow">&#9654;</span>
+        </summary>
+        <ul class="nav-dropdown-items">
+          <li><a href="#" class="nav-link">Coursework & Labs</a></li>
+          <li><a href="#" class="nav-link">Fabrication & Machining</a></li>
+        </ul>
+      </details>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p><a href="https://github.com" target="_blank">GitHub</a> &bull; <a href="mailto:your-email@purdue.edu">Email</a></p>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="main-wrapper">
+    
+    <!-- Back Button to CAD Index -->
+    <a href="cad.html" class="back-btn">&larr; Back to CAD Projects</a>
+
+    <article class="project-article">
+      <span class="project-meta">Siemens NX &bull; 3D Printing &bull; CNC Metal</span>
+      <h1 style="font-size: 1.8rem; margin-bottom: 20px;">Dynamic Flight Simulator Controls</h1>
+
+      <!-- 1. Interactive 3D Model Viewer -->
+      <model-viewer 
+        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+        alt="3D CAD Model of Project" 
+        auto-rotate 
+        camera-controls 
+        shadow-intensity="1"
+        exposure="1.2">
+      </model-viewer>
+
+      <!-- 2. Project Write-up -->
+      <div class="project-body">
+        <p>
+          Currently working on converting a Hands-On Throttle and Stick (HOTAS) setup to be Dynamic/Active. 
+          Most products on the market are either Spring-Loaded (return to the "center" of the X-Y axes via a spring calibrated to be at equilibrium in center).
+          An active controller would utilize brushless DC (BLDC) hub motors to generate a force through the controller, simulating the feeling of air over wings or "controller weight" in a cockpit.
+          An example of this would be in a stall. A spring-loaded controller gives no information as to your situation, whereas in an active controller, you could start to feel the loss of control.
+          Imagine driving a car in an infinitely large section of asphalt, but you couldn't feel anything of what the car was doing, you could only see with your eyes. 
+          It would be disorienting! How would you truly know if you're accelerating, or turning, or otherwise? Your eyes do significant work, but look away for too long and now you've lost your way.
+          It is similar in the aviation simulation world, except we accept this as the industry standard for a similar product is $600-2000, and 6-12N of force.
+          I intend to undercut this through the use of DIY, Harvesting of BLDC motors, and the use of free materials from my school to cut down this price to sub-$200.
+          The software for this project is already written by an Open-Source Project known as FFBeast (and their own version of CAD files), But I intend to design my hardware to fit my needs.
+        </p>
+
+        <h3>Design Specifications</h3>
+        <ul>
+          <li><strong>Material:</strong> 6061-T6 Aluminum (CNC) & PETG (Prototype)</li>
+          <li><strong>Actuation:</strong> BLDC motors rated at 500W per.</li>
+          <li><strong>Estimated Peak Force:</strong> 45 N</li>
+        </ul>
+
+        <p>
+          You can interact with the 3D model above using left-click to rotate, right-click to pan, and scroll to zoom.
+        </p>
+
+        <!-- 3. YouTube Video Embed at the Bottom -->
         <div class="video-container">
           <!-- Replace 'dQw4w9WgXcQ' with your YouTube video ID -->
           <iframe 
-            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+            src="https://www.youtube-nocookie.com/embed/74cOUSKXMz0" 
             title="Project Demo Video" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
           </iframe>
         </div>
-      </article>
-    </main>
-  </div>
+      </div>
+    </article>
+
+  </main>
 
 </body>
 </html>
