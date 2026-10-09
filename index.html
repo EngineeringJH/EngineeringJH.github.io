@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jacob Henning | Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h1><a href="index.html">Jacob Henning</a></h1>
+      <p class="tagline">Purdue University &bull; Mechanical & Aero Design</p>
+    </div>
+
+    <nav class="nav-menu">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link active">Home / Welcome</a>
+      </div>
+
+      <!-- CAD Projects Dropdown -->
+      <details class="nav-dropdown" open>
+        <summary>
+          <span>CAD Projects</span>
+          <span class="dropdown-arrow">&#9654;</span>
+        </summary>
+        <ul class="nav-dropdown-items">
+          <li><a href="cad.html" class="nav-link">&rarr; All CAD Projects</a></li>
+          <li><a href="flight-controls.html" class="nav-link">Flight Sim Controls</a></li>
+        </ul>
+      </details>
+
+      <!-- CFD Projects Dropdown -->
+      <details class="nav-dropdown">
+        <summary>
+          <span>CFD Projects</span>
+          <span class="dropdown-arrow">&#9654;</span>
+        </summary>
+        <ul class="nav-dropdown-items">
+          <li><a href="cfd.html" class="nav-link">&rarr; All CFD Projects</a></li>
+          <li><a href="#" class="nav-link">Airfoil Analysis (Upcoming)</a></li>
+        </ul>
+      </details>
+
+      <!-- Other Section Dropdown -->
+      <details class="nav-dropdown">
+        <summary>
+          <span>Other Work</span>
+          <span class="dropdown-arrow">&#9654;</span>
+        </summary>
+        <ul class="nav-dropdown-items">
+          <li><a href="#" class="nav-link">Coursework & Labs</a></li>
+          <li><a href="#" class="nav-link">Fabrication & Machining</a></li>
+        </ul>
+      </details>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p><a href="https://github.com" target="_blank">GitHub</a> &bull; <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
+      <p>Contact: <a href="mailto:your-email@purdue.edu">Email</a></p>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-wrapper">
+    
+    <!-- In-Page Anchor Links (Jump to sections on this page) -->
+    <div class="page-toc">
+      <div class="page-toc-title">On this page</div>
+      <ul>
+        <li><a href="#welcome">Welcome &amp; Introduction</a></li>
+        <li><a href="#cad-projects">CAD Projects Overview</a></li>
+        <li><a href="#cfd-projects">CFD Projects Overview</a></li>
+        <li><a href="#skills">Tooling &amp; Skills</a></li>
+      </ul>
+    </div>
+
+    <!-- Section 1: Welcome -->
+    <section id="welcome">
+      <h1>Welcome!</h1>
+      <p>
+        Hey, I'm <strong>Jacob</strong>. I am an engineering student at <strong>Purdue University</strong> focusing on mechanical design, aerospace systems, and hardware prototyping.
+      </p>
+      <p>
+        This portfolio documents my CAD models, kinematic mechanisms, dynamic control hardware, and CFD analyses. Feel free to explore the 3D models and build documentation using the side menu or links below.
+      </p>
+    </section>
+
+    <!-- Section 2: CAD Projects (Header links directly to cad.html) -->
+    <section id="cad-projects">
+      <h2>
+        <a href="cad.html" class="section-header-link" title="View all CAD Projects">
+          CAD Projects <span class="arrow">&rarr;</span>
+        </a>
+      </h2>
+      <p>
+        Physical assemblies, linkages, and machined components designed for rapid prototyping and precision manufacturing.
+      </p>
+
+      <div class="card-grid">
+        <a href="flight-controls.html" class="card">
+          <span class="project-meta">Siemens NX &bull; BLDC Motors &bull; CNC Aluminum</span>
+          <h3>Dynamic Flight Simulator Controls <span class="card-arrow">&rarr;</span></h3>
+          <p>
+            An active force-feedback HOTAS stick utilizing high-torque brushless DC motors to dynamically simulate aerodynamic control loading up to 45 N.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 3: CFD Projects (Header links to cfd.html) -->
+    <section id="cfd-projects">
+      <h2>
+        <a href="cfd.html" class="section-header-link" title="View all CFD Projects">
+          CFD Projects <span class="arrow">&rarr;</span>
+        </a>
+      </h2>
+      <p>
+        Flow field simulations, surface mesh studies, and aerodynamic pressure coefficient analysis.
+      </p>
+
+      <div class="card-grid">
+        <div class="card" style="opacity: 0.85;">
+          <span class="project-meta">Ansys Fluent &bull; Aerodynamics</span>
+          <h3>Transonic Airfoil Simulation <span class="card-arrow">(In Progress)</span></h3>
+          <p>
+            Boundary layer separation analysis across varying angles of attack and Mach regimes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Skills -->
+    <section id="skills">
+      <h2>Tooling &amp; Technical Skills</h2>
+      <p>
+        <strong>CAD &amp; Drafting:</strong> Siemens NX, SolidWorks, GD&amp;T, Parametric Modeling<br>
+        <strong>Analysis:</strong> Ansys Fluent (CFD), FEA Structural Analysis, MATLAB<br>
+        <strong>Fabrication:</strong> CNC Machining (6061-T6 Aluminum), FDM/SLA 3D Printing, Hardware Integration
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
