@@ -15,7 +15,7 @@
 </head>
 <body>
 
-  <!-- Automatically pulls your master sidebar from _includes/sidebar.html -->
+  <!-- Master Sidebar -->
   {% include sidebar.html %}
 
   <!-- MAIN CONTENT AREA -->
@@ -26,44 +26,76 @@
 
     <article class="project-article">
       <span class="project-meta">Siemens NX &bull; 3D Printing &bull; CNC Metal</span>
-      <h1 style="font-size: 1.8rem; margin-bottom: 20px;">Dynamic Flight Simulator Controls</h1>
+      <h1 style="font-size: 1.85rem; margin: 8px 0 16px 0;">Dynamic Flight Simulator Controls</h1>
 
-      <!-- 1. Interactive 3D Model Viewer -->
-      <model-viewer 
-        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
-        alt="3D CAD Model of Project" 
-        auto-rotate 
-        camera-controls 
-        shadow-intensity="1"
-        exposure="1.2">
-      </model-viewer>
+      <!-- QUICK METRICS GRID (Top-level specs at a glance) -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px;">
+        <div style="background: #141821; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px;">
+          <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; font-weight: 600;">Target Budget</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: #38bdf8;">&lt; $200 <span style="font-size: 0.8rem; color: var(--muted); font-weight: 400;">(vs. $600–$2k)</span></div>
+        </div>
+        <div style="background: #141821; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px;">
+          <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; font-weight: 600;">Peak Force</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: #38bdf8;">45 N <span style="font-size: 0.8rem; color: var(--muted); font-weight: 400;">(vs. 6–12 N std)</span></div>
+        </div>
+        <div style="background: #141821; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px;">
+          <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; font-weight: 600;">Actuator Type</div>
+          <div style="font-size: 1.15rem; font-weight: 600; color: #fff;">Direct-Drive BLDC</div>
+        </div>
+        <div style="background: #141821; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px;">
+          <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; font-weight: 600;">Firmware Base</div>
+          <div style="font-size: 1.15rem; font-weight: 600; color: #fff;">FFBeast (Open-Source)</div>
+        </div>
+      </div>
 
-      <!-- 2. Project Write-up -->
+      <!-- 3D MODEL VIEWER WITH FLOATING INSTRUCTION BADGE -->
+      <div style="position: relative;">
+        <!-- Floating interaction hint in bottom-right corner -->
+        <div style="position: absolute; bottom: 32px; right: 14px; background: rgba(15, 17, 23, 0.85); backdrop-filter: blur(4px); border: 1px solid var(--border); color: var(--text); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; pointer-events: none; z-index: 10;">
+          🖱️ Drag: Rotate &bull; Right-Click: Pan &bull; Scroll: Zoom
+        </div>
+
+        <model-viewer 
+          src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+          alt="3D CAD Model of Project" 
+          auto-rotate 
+          camera-controls 
+          shadow-intensity="1"
+          exposure="1.2">
+        </model-viewer>
+      </div>
+
+      <!-- STRUCTURED CASE STUDY SECTIONS -->
       <div class="project-body">
+        
+        <h3>The Problem: The Limits of Spring-Loaded Sticks</h3>
         <p>
-          Currently working on converting a Hands-On Throttle and Stick (HOTAS) setup to be Dynamic/Active. 
-          Most products on the market are either Spring-Loaded (return to the "center" of the X-Y axes via a spring calibrated to be at equilibrium in center).
-          An active controller would utilize brushless DC (BLDC) hub motors to generate a force through the controller, simulating the feeling of air over wings or "controller weight" in a cockpit.
-          An example of this would be in a stall. A spring-loaded controller gives no information as to your situation, whereas in an active controller, you could start to feel the loss of control.
-          Imagine driving a car in an infinitely large section of asphalt, but you couldn't feel anything of what the car was doing, you could only see with your eyes. 
-          It would be disorienting! How would you truly know if you're accelerating, or turning, or otherwise? Your eyes do significant work, but look away for too long and now you've lost your way.
-          It is similar in the aviation simulation world, except we accept this as the industry standard for a similar product is $600-2000, and 6-12N of force.
-          I intend to undercut this through the use of DIY, Harvesting of BLDC motors, and the use of free materials from my school to cut down this price to sub-$200.
-          The software for this project is already written by an Open-Source Project known as FFBeast (and their own version of CAD files), But I intend to design my hardware to fit my needs.
+          Most consumer flight controls (HOTAS) are passive and spring-centered: they pull back to equilibrium regardless of flight condition. In actual flight, control loading changes dynamically with airspeed, dynamic pressure, and trim. During an aerodynamic stall, a spring stick communicates zero physical feedback, forcing the pilot to rely entirely on visual instruments.
         </p>
 
-        <h3>Design Specifications</h3>
+        <!-- ANALOGY CALLOUT BOX -->
+        <blockquote style="margin: 20px 0; padding: 14px 20px; background: #141821; border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; color: #e1e4ea; font-style: italic;">
+          "Imagine driving a car on an open tarmac, but with zero road resistance or tire feedback through the steering wheel. Your eyes alone have to process turning rate, slip, and acceleration. Look away for a second, and you’ve lost situational awareness. That is the current reality of budget flight simulation."
+        </blockquote>
+
+        <h3>Engineering Approach &amp; Cost Strategy</h3>
+        <p>
+          Commercial active force-feedback bases range from $600 to over $2,000 while outputting only 6–12 N of torque. This design targets <strong>45 N peak output</strong> at a sub-$200 build cost through:
+        </p>
         <ul>
-          <li><strong>Material:</strong> 6061-T6 Aluminum (CNC) &amp; PETG (Prototype)</li>
-          <li><strong>Actuation:</strong> BLDC motors rated at 500W per.</li>
-          <li><strong>Estimated Peak Force:</strong> 45 N</li>
+          <li><strong>Brushless DC (BLDC) Direct Drive:</strong> Utilizing harvested high-pole-count BLDC motors for smooth torque delivery with zero belt slack or gear backlash.</li>
+          <li><strong>Custom Gimbal Architecture:</strong> Designed from scratch in Siemens NX to fit high-rigidity CNC aluminum bearing blocks and 3D-printed housing tolerances.</li>
+          <li><strong>Open-Source Integration:</strong> Interfacing with the FFBeast motor controller firmware for real-time telemetry extraction from Microsoft Flight Simulator and DCS World.</li>
         </ul>
 
-        <p>
-          You can interact with the 3D model above using left-click to rotate, right-click to pan, and scroll to zoom.
-        </p>
+        <h3>Hardware Specifications</h3>
+        <ul>
+          <li><strong>Materials:</strong> 6061-T6 Aluminum (bearing blocks &amp; critical load paths), PETG (structural enclosure)</li>
+          <li><strong>Actuators:</strong> Dual 500W BLDC motors (Pitch &amp; Roll axes)</li>
+          <li><strong>Peak Theoretical Force:</strong> 45 N at full deflection</li>
+        </ul>
 
-        <!-- 3. YouTube Video Embed -->
+        <!-- YOUTUBE VIDEO -->
         <div class="video-container">
           <iframe 
             src="https://www.youtube-nocookie.com/embed/74cOUSKXMz0" 
@@ -73,7 +105,7 @@
           </iframe>
         </div>
 
-        <!-- 4. Project Build Log / Updates -->
+        <!-- PROJECT BUILD LOG (Auto-Opening Option B) -->
         <section class="updates-section">
           <h3>Project Build Log</h3>
           <p style="color: var(--muted); font-size: 0.9rem;">
@@ -81,8 +113,6 @@
           </p>
 
           <div id="project-updates-container">
-            
-            <!-- Latest Update (Add future updates right here at the top) -->
             <details class="update-log">
               <summary>
                 <span class="update-arrow">&#9654;</span>
@@ -92,13 +122,12 @@
               <div class="update-content">
                 <ul>
                   <li>Targeting peak force at 45 N to outperform entry-level commercial units.</li>
-                  <li>Investigating harvested BLDC hub motors from to constrain actuator cost.</li>
-                  <li>Beginning preliminary sketches in Siemens NX.</li>
+                  <li>Investigating harvested BLDC gimbal/hub motors to constrain actuator cost.</li>
+                  <li>Beginning preliminary gimbal geometry sketches and axis clearances in Siemens NX.</li>
                 </ul>
               </div>
             </details>
 
-            <!-- Previous Update -->
             <details class="update-log">
               <summary>
                 <span class="update-arrow">&#9654;</span>
@@ -112,7 +141,6 @@
                 </ul>
               </div>
             </details>
-
           </div>
         </section>
 
