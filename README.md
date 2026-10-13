@@ -8,13 +8,13 @@ Welcome to the repository hosting my personal engineering portfolio website.
 ---
 
 ## About Me
-I am an engineering student at **Purdue University** focused on Aerospace/Aeronautical design, aerospace systems, kinematic assemblies, and hardware prototyping.
+I am an engineering student at **Purdue University** focused on Aerospace/Aeronautical Engineering. Personally interested on any hands on creative work, specifically in design and any goodies that make my life easier.
 
 ## Featured Projects
 * **Dynamic Flight Simulator Controls (HOTAS):** Active force-feedback flight stick powered by high-torque brushless DC (BLDC) motors (45 N peak force).
 
 ## Tooling & Software
-* **CAD / Modeling:** Siemens NX, Learning SolidWorks Spring '27
+* **CAD / Modeling:** Siemens NX, (Learning SolidWorks Spring '27)
 * **Analysis:** MatLab, (Still learning: Ansys Fluent (CFD), FEA Stress Analysis)
 * **Manufacturing:** CNC Machining (6061 Aluminum), FDM/SLA 3D Printing
 
