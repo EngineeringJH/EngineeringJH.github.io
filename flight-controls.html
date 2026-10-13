@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,70 +10,18 @@
   <!-- Google <model-viewer> Web Component -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
-  <!-- Connects to your shared site styling & sidebar -->
+  <!-- Connects to shared site styling & sidebar -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- LEFT SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <h1><a href="index.html">Jacob Henning</a></h1>
-      <p class="tagline">Purdue University &bull; Aerospace Engineering</p>
-    </div>
-
-    <nav class="nav-menu">
-      <div class="nav-item">
-        <a href="index.html" class="nav-link">Home / Welcome</a>
-      </div>
-
-      <!-- CAD Projects Dropdown (Kept open on this page) -->
-      <details class="nav-dropdown" open>
-        <summary>
-          <span>CAD Projects</span>
-          <span class="dropdown-arrow">&#9654;</span>
-        </summary>
-        <ul class="nav-dropdown-items">
-          <li><a href="cad.html" class="nav-link">&rarr; All CAD Projects</a></li>
-          <!-- Highlighted pill showing current page -->
-          <li><a href="flight-controls.html" class="nav-link active">Flight Sim Controls</a></li>
-        </ul>
-      </details>
-
-      <!-- CFD Projects Dropdown -->
-      <details class="nav-dropdown">
-        <summary>
-          <span>CFD Projects</span>
-          <span class="dropdown-arrow">&#9654;</span>
-        </summary>
-        <ul class="nav-dropdown-items">
-          <li><a href="cfd.html" class="nav-link">&rarr; All CFD Projects</a></li>
-          <li><a href="#" class="nav-link">Airfoil Analysis</a></li>
-        </ul>
-      </details>
-
-      <!-- Other Projects Dropdown -->
-      <details class="nav-dropdown">
-        <summary>
-          <span>Other Work</span>
-          <span class="dropdown-arrow">&#9654;</span>
-        </summary>
-        <ul class="nav-dropdown-items">
-          <li><a href="#" class="nav-link">Coursework & Labs</a></li>
-          <li><a href="#" class="nav-link">Fabrication & Machining</a></li>
-        </ul>
-      </details>
-    </nav>
-
-    <div class="sidebar-footer">
-      <p><a href="https://github.com" target="_blank">GitHub</a> &bull; <a href="mailto:your-email@purdue.edu">Email</a></p>
-    </div>
-  </aside>
+  <!-- Automatically pulls your master sidebar from _includes/sidebar.html -->
+  {% include sidebar.html %}
 
   <!-- MAIN CONTENT AREA -->
   <main class="main-wrapper">
     
-    <!-- Back Button to CAD Index -->
+    <!-- Back Button -->
     <a href="cad.html" class="back-btn">&larr; Back to CAD Projects</a>
 
     <article class="project-article">
@@ -104,7 +54,7 @@
 
         <h3>Design Specifications</h3>
         <ul>
-          <li><strong>Material:</strong> 6061-T6 Aluminum (CNC) & PETG (Prototype)</li>
+          <li><strong>Material:</strong> 6061-T6 Aluminum (CNC) &amp; PETG (Prototype)</li>
           <li><strong>Actuation:</strong> BLDC motors rated at 500W per.</li>
           <li><strong>Estimated Peak Force:</strong> 45 N</li>
         </ul>
@@ -113,9 +63,8 @@
           You can interact with the 3D model above using left-click to rotate, right-click to pan, and scroll to zoom.
         </p>
 
-        <!-- 3. YouTube Video Embed at the Bottom -->
+        <!-- 3. YouTube Video Embed -->
         <div class="video-container">
-          <!-- Replace 'dQw4w9WgXcQ' with your YouTube video ID -->
           <iframe 
             src="https://www.youtube-nocookie.com/embed/74cOUSKXMz0" 
             title="Project Demo Video" 
@@ -123,10 +72,66 @@
             allowfullscreen>
           </iframe>
         </div>
+
+        <!-- 4. Project Build Log / Updates -->
+        <section class="updates-section">
+          <h3>Project Build Log</h3>
+          <p style="color: var(--muted); font-size: 0.9rem;">
+            Chronological progress notes, hardware iterations, and milestones.
+          </p>
+
+          <div id="project-updates-container">
+            
+            <!-- Latest Update (Add future updates right here at the top) -->
+            <details class="update-log">
+              <summary>
+                <div class="update-header-info">
+                  <span class="update-date-badge">10/13/2026</span>
+                  <span class="update-title">Initial Sizing &amp; Motor Sourcing Planning</span>
+                </div>
+                <span class="update-arrow">&#9654;</span>
+              </summary>
+              <div class="update-content">
+                <ul>
+                  <li>Targeting peak force at 45 N to outperform entry-level commercial units.</li>
+                  <li>Investigating harvested BLDC gimbal/hub motors to constrain actuator cost.</li>
+                  <li>Beginning preliminary gimbal geometry sketches and axis clearances in Siemens NX.</li>
+                </ul>
+              </div>
+            </details>
+
+            <!-- Previous Update -->
+            <details class="update-log">
+              <summary>
+                <div class="update-header-info">
+                  <span class="update-date-badge">10/09/2026</span>
+                  <span class="update-title">Project Kickoff &amp; Software Evaluation</span>
+                </div>
+                <span class="update-arrow">&#9654;</span>
+              </summary>
+              <div class="update-content">
+                <ul>
+                  <li>Reviewed FFBeast open-source firmware compatibility and hardware requirements.</li>
+                  <li>Established BOM constraints to maintain the sub-$200 total target cost.</li>
+                </ul>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
       </div>
     </article>
 
   </main>
+
+  <!-- Script: Auto-opens only the newest update log -->
+  <script>
+    const updateLogs = document.querySelectorAll('.update-log');
+    updateLogs.forEach((log, index) => {
+      log.open = (index === 0);
+    });
+  </script>
 
 </body>
 </html>
