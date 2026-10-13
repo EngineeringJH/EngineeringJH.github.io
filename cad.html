@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,51 +10,26 @@
 </head>
 <body>
 
-  <!-- (Insert the same <aside class="sidebar"> here with 'All CAD Projects' marked active) -->
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <h1><a href="index.html">Jacob Henning</a></h1>
-      <p class="tagline">Purdue University &bull; Aerospace Engineering</p>
-    </div>
-    <nav class="nav-menu">
-      <div class="nav-item"><a href="index.html" class="nav-link">Home / Welcome</a></div>
-      <details class="nav-dropdown" open>
-        <summary><span>CAD Projects</span><span class="dropdown-arrow">&#9654;</span></summary>
-        <ul class="nav-dropdown-items">
-          <li><a href="cad.html" class="nav-link active">&rarr; All CAD Projects</a></li>
-          <li><a href="flight-controls.html" class="nav-link">Flight Sim Controls</a></li>
-        </ul>
-      </details>
-      <details class="nav-dropdown">
-        <summary><span>CFD Projects</span><span class="dropdown-arrow">&#9654;</span></summary>
-        <ul class="nav-dropdown-items">
-          <li><a href="cfd.html" class="nav-link">&rarr; All CFD Projects</a></li>
-          <li><a href="#" class="nav-link">Airfoil Analysis</a></li>
-        </ul>
-      </details>
-    </nav>
-    <div class="sidebar-footer">
-      <p><a href="https://github.com/EngineeringJH/EngineeringJH.github.io" target="_blank">GitHub</a> &bull; <a href="mailto:hennin28@purdue.edu">Email</a></p>
-    </div>
-  </aside>
+  <!-- Automatically pulls your master sidebar from _includes/sidebar.html -->
+  {% include sidebar.html %}
 
   <main class="main-wrapper">
     <h1>CAD Projects</h1>
     <p>
-      An index of mechanical assemblies, functional prototypes, and manufacturing drawings. Click any project card below to view the interactive 3D model and build log.
+      An index of mechanical assemblies, functional prototypes, and manufacturing drawings. Click any project card below to view the interactive 3D model, build log, and demo video.
     </p>
 
     <div class="card-grid">
-      <!-- Card linking to the individual project page -->
+      <!-- Dynamic Flight Simulator Controls Card -->
       <a href="flight-controls.html" class="card">
         <span class="project-meta">Siemens NX &bull; BLDC Motors &bull; CNC Metal</span>
         <h3>Dynamic Flight Simulator Controls <span class="card-arrow">&rarr;</span></h3>
         <p>
-          Active force feedback controller replacing passive springs with high-torque brushless motors. Includes interactive 3D assembly and demo video.
+          Active force feedback controller replacing passive springs with high-torque brushless motors. Includes interactive 3D assembly, dev updates, and demo video.
         </p>
       </a>
 
-      <!-- Placeholder card for your next project -->
+      <!-- Placeholder card for upcoming project -->
       <div class="card" style="border-style: dashed; opacity: 0.7;">
         <span class="project-meta">In Progress</span>
         <h3>Next CAD Project <span class="card-arrow">+</span></h3>
