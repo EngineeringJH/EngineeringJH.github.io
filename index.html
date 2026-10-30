@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jacob Henning | Aerospace &amp; Autonomous Systems</title>
+  <title>Jacob Henning | Aerospace Engineering &amp; Kinetic Systems</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,84 +31,114 @@
   <!-- MAIN CONTAINER -->
   <main class="container">
 
-    <!-- AV CAPABILITIES SECTION WITH MOUSE-TRACKING SPOTLIGHT -->
-    <section class="av-capabilities-section" id="capabilities">
+    <!-- AV-STYLE CAPABILITIES COMPONENT WITH REACTIVE CANVAS -->
+    <section class="av-component-capabilities" id="capabilities">
       
-      <!-- Technical Reticle Marks in Corners -->
-      <span class="reticle-mark reticle-tl">+</span>
-      <span class="reticle-mark reticle-tr">+</span>
-      <span class="reticle-mark reticle-bl">+</span>
-      <span class="reticle-mark reticle-br">+</span>
+      <div class="av-bordered-box">
+        <!-- Reticle Marks in Corners (+) -->
+        <span class="reticle-mark reticle-tl">+</span>
+        <span class="reticle-mark reticle-tr">+</span>
+        <span class="reticle-mark reticle-bl">+</span>
+        <span class="reticle-mark reticle-br">+</span>
 
-      <div class="av-cap-grid">
-        
-        <!-- LEFT COLUMN -->
-        <div class="av-cap-left">
-          <div class="cap-pretitle">_CAPABILITIES &amp; FOCUS</div>
-          <h2>Aerospace Systems &amp; Mechanical Design</h2>
-          <a href="cad.html" class="av-outline-btn">VIEW ALL CAD WORK</a>
+        <div class="av-grid-inner">
           
-          <!-- Faded Blueprint Graphic -->
-          <div class="blueprint-graphic">
-            <svg viewBox="0 0 300 150" fill="none" stroke="rgba(0, 163, 255, 0.15)" stroke-width="1.2">
-              <path d="M 10,75 C 60,30 200,20 280,75 C 200,130 60,120 10,75 Z" />
-              <path d="M 40,75 C 80,45 180,40 250,75 C 180,110 80,105 40,75 Z" stroke-dasharray="3 3" />
-              <line x1="10" y1="75" x2="280" y2="75" stroke="rgba(255, 255, 255, 0.1)" />
-              <circle cx="80" cy="75" r="25" />
-              <line x1="280" y1="75" x2="295" y2="60" />
-              <line x1="280" y1="75" x2="295" y2="90" />
-            </svg>
+          <!-- LEFT COLUMN: Headline, Tactical Button & Blueprint -->
+          <div class="av-col-left">
+            <p class="av-eyebrow">_CAPABILITIES &amp; HARDWARE</p>
+            <h2 class="av-headline-m">Hands-On Aerospace Engineering &amp; Kinetic Controls</h2>
+
+            <!-- AV Tactical Button with Chamfered Corners -->
+            <div>
+              <a href="cad.html" class="av-tactical-btn">
+                <span class="btn-corner tl"></span>
+                <span class="btn-corner tr"></span>
+                <span class="btn-corner bl"></span>
+                <span class="btn-corner br"></span>
+                <span class="btn-text">EXPLORE ALL CAD WORK &rarr;</span>
+              </a>
+            </div>
+
+            <!-- Aerospace Technical Wireframe Illustration -->
+            <div class="av-vector-wrap">
+              <svg viewBox="0 0 400 180" fill="none" stroke="rgba(0, 163, 255, 0.22)" stroke-width="1.2">
+                <path d="M 15,90 C 80,35 280,25 385,90 C 280,155 80,145 15,90 Z" />
+                <path d="M 60,90 C 110,50 250,45 350,90 C 250,135 110,130 60,90 Z" stroke-dasharray="4 4" />
+                <line x1="15" y1="90" x2="385" y2="90" stroke="rgba(255, 255, 255, 0.12)" />
+                <circle cx="110" cy="90" r="32" stroke="rgba(0, 163, 255, 0.3)" />
+                <circle cx="110" cy="90" r="12" />
+                <line x1="220" y1="42" x2="220" y2="138" stroke="rgba(255, 255, 255, 0.15)" stroke-dasharray="3 3" />
+                <path d="M 340,70 L 375,50 L 375,90 Z" />
+                <path d="M 340,110 L 375,130 L 375,90 Z" />
+              </svg>
+            </div>
           </div>
+
+          <!-- RIGHT COLUMN: Numbered Register (Number Left, Title Right) -->
+          <div class="av-col-right">
+            <ol class="av-register-list">
+
+              <li class="av-register-row">
+                <a href="flight-controls.html" class="av-row-link"></a>
+                <div class="av-row-content">
+                  <span class="av-num">[&nbsp;01&nbsp;]</span>
+                  <span class="av-title">Dynamic Flight Simulator Controls (HOTAS)</span>
+                </div>
+              </li>
+
+              <li class="av-register-row">
+                <a href="flight-controls.html" class="av-row-link"></a>
+                <div class="av-row-content">
+                  <span class="av-num">[&nbsp;02&nbsp;]</span>
+                  <span class="av-title">High-Torque Direct-Drive BLDC Actuation</span>
+                </div>
+              </li>
+
+              <li class="av-register-row">
+                <a href="flight-controls.html" class="av-row-link"></a>
+                <div class="av-row-content">
+                  <span class="av-num">[&nbsp;03&nbsp;]</span>
+                  <span class="av-title">Kinematic Gimbal Assembly in Siemens NX</span>
+                </div>
+              </li>
+
+              <li class="av-register-row">
+                <div class="av-row-content" style="opacity: 0.65;">
+                  <span class="av-num">[&nbsp;04&nbsp;]</span>
+                  <span class="av-title">Transonic Airfoil Flow Simulation (CFD)</span>
+                </div>
+              </li>
+
+              <li class="av-register-row">
+                <div class="av-row-content">
+                  <span class="av-num">[&nbsp;05&nbsp;]</span>
+                  <span class="av-title">6061-T6 Aluminum CNC Machining &amp; Fixturing</span>
+                </div>
+              </li>
+
+              <li class="av-register-row">
+                <div class="av-row-content">
+                  <span class="av-num">[&nbsp;06&nbsp;]</span>
+                  <span class="av-title">Additive Prototyping (FDM / SLA DFM)</span>
+                </div>
+              </li>
+
+              <li class="av-register-row">
+                <div class="av-row-content">
+                  <span class="av-num">[&nbsp;07&nbsp;]</span>
+                  <span class="av-title">Open-Source Firmware &amp; Telemetry Interfacing</span>
+                </div>
+              </li>
+
+            </ol>
+          </div>
+
         </div>
-
-        <!-- RIGHT COLUMN: NUMBERED CAPABILITIES LIST -->
-        <div class="av-cap-right">
-          
-          <a href="flight-controls.html" class="cap-row">
-            <span class="cap-num">[ 01 ]</span>
-            <span class="cap-title">Dynamic Flight Simulator Controls (HOTAS)</span>
-            <span class="cap-arrow">&rarr;</span>
-          </a>
-
-          <a href="flight-controls.html" class="cap-row">
-            <span class="cap-num">[ 02 ]</span>
-            <span class="cap-title">High-Torque Direct-Drive BLDC Actuation</span>
-            <span class="cap-arrow">&rarr;</span>
-          </a>
-
-          <div class="cap-row">
-            <span class="cap-num">[ 03 ]</span>
-            <span class="cap-title">Kinematic Gimbal Assembly in Siemens NX</span>
-            <span class="cap-badge">In Dev</span>
-          </div>
-
-          <div class="cap-row">
-            <span class="cap-num">[ 04 ]</span>
-            <span class="cap-title">Transonic Airfoil Flow Analysis (CFD)</span>
-            <span class="cap-badge">Upcoming</span>
-          </div>
-
-          <div class="cap-row">
-            <span class="cap-num">[ 05 ]</span>
-            <span class="cap-title">6061-T6 Aluminum CNC Machining &amp; DFM</span>
-            <span class="cap-arrow">&rarr;</span>
-          </div>
-
-          <div class="cap-row">
-            <span class="cap-num">[ 06 ]</span>
-            <span class="cap-title">FDM/SLA Additive Prototyping &amp; Tolerancing</span>
-            <span class="cap-arrow">&rarr;</span>
-          </div>
-
-          <div class="cap-row">
-            <span class="cap-num">[ 07 ]</span>
-            <span class="cap-title">Telemetry Extraction &amp; Motor Driver Firmware</span>
-            <span class="cap-arrow">&rarr;</span>
-          </div>
-
-        </div>
-
       </div>
+
+      <!-- Real-time HTML5 Canvas Particle Reactor -->
+      <canvas id="av-particle-canvas" class="av-particle-canvas"></canvas>
+
     </section>
 
     <!-- FEATURED PROJECT DOSSIERS -->
@@ -131,7 +161,7 @@
         </div>
       </a>
 
-      <!-- Card 2: Upcoming CFD / Aero -->
+      <!-- Card 2: Upcoming CFD -->
       <div class="av-card" style="opacity: 0.85;">
         <div class="card-index">[ DOSSIER 02 &bull; AERODYNAMICS ]</div>
         <h3>Transonic Airfoil Flow Simulation <span>(In Development)</span></h3>
@@ -186,18 +216,75 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: Mouse-Tracking Spotlight Radar Effect -->
+  <!-- REAL-TIME PARTICLE CANVAS ENGINE (particleBg) -->
   <script>
-    const capSection = document.getElementById('capabilities');
-    if (capSection) {
-      capSection.addEventListener('mousemove', (e) => {
-        const rect = capSection.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        capSection.style.setProperty('--mouse-x', `${x}px`);
-        capSection.style.setProperty('--mouse-y', `${y}px`);
+    (function initAVCanvas() {
+      const canvas = document.getElementById('av-particle-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const parent = canvas.parentElement;
+
+      function resize() {
+        canvas.width = parent.offsetWidth;
+        canvas.height = parent.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // Build technical dot matrix grid
+      const dots = [];
+      const spacing = 34;
+      for (let x = 0; x < 1600; x += spacing) {
+        for (let y = 0; y < 1200; y += spacing) {
+          dots.push({ x, y });
+        }
+      }
+
+      const mouse = { x: -1000, y: -1000 };
+      parent.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
       });
-    }
+
+      parent.addEventListener('mouseleave', () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+      });
+
+      function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        for (let i = 0; i < dots.length; i++) {
+          const d = dots[i];
+          if (d.x > canvas.width || d.y > canvas.height) continue;
+
+          const dx = mouse.x - d.x;
+          const dy = mouse.y - d.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          let radius = 1.1;
+          let alpha = 0.08;
+          let color = '255, 255, 255';
+
+          // Proximity illumination: dots brighten into cyan and expand near cursor
+          if (dist < 190) {
+            const factor = 1 - dist / 190;
+            alpha = 0.08 + factor * 0.75;
+            radius = 1.1 + factor * 1.6;
+            color = '56, 189, 248'; // AV Cyan
+          }
+
+          ctx.beginPath();
+          ctx.arc(d.x, d.y, radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${color}, ${alpha})`;
+          ctx.fill();
+        }
+
+        requestAnimationFrame(render);
+      }
+      render();
+    })();
   </script>
 
 </body>
