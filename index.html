@@ -5,96 +5,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jacob Henning | Engineering Portfolio</title>
+  <title>Jacob Henning | Aerospace &amp; Autonomous Systems</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Automatically pulls your master sidebar from _includes/sidebar.html -->
-  {% include sidebar.html %}
+  <!-- Top Aerospace Navbar -->
+  {% include navbar.html %}
 
-  <!-- MAIN CONTENT -->
-  <main class="main-wrapper">
-    
-    <!-- In-Page Anchor Links -->
-    <div class="page-toc">
-      <div class="page-toc-title">On this page</div>
-      <ul>
-        <li><a href="#welcome">Welcome &amp; Introduction</a></li>
-        <li><a href="#cad-projects">CAD Projects Overview</a></li>
-        <!-- CFD Projects link is commented out while muted -->
-        <!-- <li><a href="#cfd-projects">CFD Projects Overview</a></li> -->
-        <li><a href="#skills">Tooling &amp; Skills</a></li>
-      </ul>
-    </div>
-
-    <!-- Section 1: Welcome -->
-    <section id="welcome">
-      <h1>Welcome!</h1>
+  <!-- FULL-WIDTH HERO SECTION (AV-Style) -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">[ PURDUE AAE &bull; MECHANICAL &amp; AERO DESIGN ]</div>
+      <h1>Hands-On Aerospace Engineering &amp; Kinetic Systems</h1>
       <p>
-        Hey, I'm <strong>Jacob</strong>. I am an Aerospace/Aeronautical Engineering student at <strong>Purdue University</strong> focusing on design and experimentation. I fix problems that I have or on things that interest me!
+        Undergraduate engineer at Purdue University specializing in CAD mechanism design, rapid CNC/FDM prototyping, and dynamic force-feedback flight controls.
       </p>
-      <p>
-        This portfolio documents my CAD models, previous design projects, and a general engineering portfolio. Feel free to explore the 3D models and build documentation using the side menu or links below.
-      </p>
-    </section>
-
-    <!-- Section 2: CAD Projects -->
-    <section id="cad-projects">
-      <h2>
-        <a href="cad.html" class="section-header-link" title="View all CAD Projects">
-          CAD Projects <span class="arrow">&rarr;</span>
-        </a>
-      </h2>
-      <p>
-        Physical assemblies, linkages, and machined components designed for rapid prototyping and precision manufacturing.
-      </p>
-
-      <div class="card-grid">
-        <a href="flight-controls.html" class="card">
-          <span class="project-meta">Siemens NX &bull; BLDC Motors &bull; CNC Aluminum</span>
-          <h3>Dynamic Flight Simulator Controls <span class="card-arrow">&rarr; (In Progress)</span></h3>
-          <p>
-            An active force-feedback HOTAS stick utilizing high-torque brushless DC motors to dynamically simulate aerodynamic control loading up to 45 N.
-          </p>
-        </a>
+      <div class="hero-cta">
+        <a href="#featured-projects" class="btn-primary">View Featured Projects</a>
+        <a href="mailto:hennin28@purdue.edu" class="btn-secondary">Contact Direct</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Muted CFD Section (Saved for future use) -->
-    <template id="saved-transonic-card">
-    <section id="cfd-projects">
-      <h2>
-        <a href="cfd.html" class="section-header-link" title="View all CFD Projects">
-          CFD Projects <span class="arrow">&rarr;</span>
-        </a>
-      </h2>
-      <p>
-        Flow field simulations, surface mesh studies, and aerodynamic pressure coefficient analysis.
-      </p>
-      <div class="card-grid">
-        <div class="card" style="opacity: 0.85;">
-          <span class="project-meta">Ansys Fluent &bull; Aerodynamics</span>
-          <h3>Transonic Airfoil Simulation <span class="card-arrow">(In Progress)</span></h3>
-          <p>
-            Boundary layer separation analysis across varying angles of attack and Mach regimes.
-          </p>
+  <!-- MAIN WORKSPACE -->
+  <main class="container">
+    
+    <!-- DOMAINS / PROJECT DOSSIERS -->
+    <div class="section-label">[ 01 ] ACTIVE CAPABILITIES</div>
+    <h2 class="section-title">Core Engineering Domains</h2>
+
+    <div class="grid-2" id="featured-projects">
+      
+      <!-- Card 1: Flight Controls -->
+      <a href="flight-controls.html" class="av-card">
+        <div class="card-index">[ DOSSIER 01 &bull; ACTIVE FLIGHT HARDWARE ]</div>
+        <h3>Dynamic Flight Simulator Controls <span>&rarr;</span></h3>
+        <p class="card-desc">
+          High-torque brushless DC (BLDC) direct-drive controller converting passive spring HOTAS systems into active aerodynamic force-feedback mechanisms capable of 45 N peak output.
+        </p>
+        <div class="card-specs-row">
+          <span><strong>CAD:</strong> Siemens NX</span>
+          <span><strong>Peak Torque:</strong> 45 N</span>
+          <span><strong>Status:</strong> Prototype</span>
+        </div>
+      </a>
+
+      <!-- Card 2: Upcoming CFD / Aero -->
+      <div class="av-card" style="opacity: 0.85;">
+        <div class="card-index">[ DOSSIER 02 &bull; AERODYNAMICS ]</div>
+        <h3>Transonic Airfoil Flow Simulation <span>(In Development)</span></h3>
+        <p class="card-desc">
+          Computational fluid dynamics (CFD) surface mesh study analyzing boundary layer separation and pressure distributions across transonic Mach regimes.
+        </p>
+        <div class="card-specs-row">
+          <span><strong>Tooling:</strong> Ansys Fluent / MATLAB</span>
+          <span><strong>Domain:</strong> Aerodynamics</span>
         </div>
       </div>
-    </section>
-    </template>
 
-    <!-- Section 4: Skills -->
-    <section id="skills">
-      <h2>Tooling &amp; Technical Skills</h2>
-      <p>
-        <strong>CAD &amp; Drafting:</strong> Siemens NX, (Learning SolidWorks Spring '27)<br>
-        <strong>Analysis:</strong> MATLAB, (Upcoming: Ansys Fluent, FEA Stress Analysis)<br>
-        <strong>Fabrication:</strong> CNC Machining (6061 Aluminum), FDM/SLA 3D Printing
-      </p>
-    </section>
+    </div>
+
+    <!-- TECHNICAL TOOLING & FABRICATION -->
+    <div class="section-label">[ 02 ] TECHNICAL ARSENAL</div>
+    <h2 class="section-title">Tooling &amp; Manufacturing</h2>
+
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 28px; margin-bottom: 40px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+        <div>
+          <div style="color: var(--accent-cyan); font-family: monospace; font-size: 0.8rem; margin-bottom: 6px;">[ CAD &amp; KINEMATICS ]</div>
+          <div style="color: #fff; font-weight: 600;">Siemens NX</div>
+          <div style="color: var(--text-muted); font-size: 0.88rem;">Parametric modeling, assemblies, GD&amp;T (SolidWorks Spring '27)</div>
+        </div>
+        <div>
+          <div style="color: var(--accent-cyan); font-family: monospace; font-size: 0.8rem; margin-bottom: 6px;">[ FABRICATION ]</div>
+          <div style="color: #fff; font-weight: 600;">CNC &amp; Additive</div>
+          <div style="color: var(--text-muted); font-size: 0.88rem;">6061 Aluminum machining, FDM/SLA 3D printing, rapid iteration</div>
+        </div>
+        <div>
+          <div style="color: var(--accent-cyan); font-family: monospace; font-size: 0.8rem; margin-bottom: 6px;">[ COMPUTATION ]</div>
+          <div style="color: #fff; font-weight: 600;">MATLAB</div>
+          <div style="color: var(--text-muted); font-size: 0.88rem;">Numerical methods, data parsing, upcoming CFD analysis</div>
+        </div>
+      </div>
+    </div>
 
   </main>
+
+  <!-- AV-STYLE FOOTER -->
+  <footer class="av-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Jacob Henning</strong> &bull; Purdue University AAE &bull; 
+        <a href="mailto:hennin28@purdue.edu">hennin28@purdue.edu</a>
+      </div>
+      <div>
+        <a href="https://github.com/EngineeringJH/EngineeringJH.github.io" target="_blank">GitHub</a> &bull;
+        <a href="https://www.linkedin.com/in/jacobohenning" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
