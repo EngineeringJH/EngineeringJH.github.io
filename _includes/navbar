@@ -1,0 +1,39 @@
+<!-- TOP AEROSPACE NAVBAR -->
+<header class="av-navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-monogram">JH</span>
+      <span class="brand-text">Jacob Henning <span class="brand-sub">// Purdue AAE</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Home</a>
+
+      <!-- CAD Dropdown -->
+      <div class="nav-dropdown-wrapper">
+        <a href="cad.html" class="nav-item dropdown-trigger">
+          CAD &amp; Hardware <span class="nav-caret">&#9662;</span>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="cad.html" class="dropdown-item">&rarr; All CAD Projects</a>
+          <a href="flight-controls.html" class="dropdown-item">Active Flight Controls (HOTAS)</a>
+          <!-- Add future CAD projects here -->
+        </div>
+      </div>
+
+      <!-- Other Dropdowns -->
+      <div class="nav-dropdown-wrapper">
+        <a href="#" class="nav-item dropdown-trigger">
+          Engineering Domains <span class="nav-caret">&#9662;</span>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="#" class="dropdown-item">CFD &amp; Aerodynamics (Upcoming)</a>
+          <a href="#" class="dropdown-item">Fabrication &amp; Machining</a>
+          <a href="#" class="dropdown-item">Coursework &amp; Labs</a>
+        </div>
+      </div>
+
+      <a href="https://www.linkedin.com/in/jacobohenning" target="_blank" class="nav-item nav-btn">LinkedIn</a>
+    </nav>
+  </div>
+</header>
