@@ -233,195 +233,175 @@ body {
   margin: 0 0 32px 0;
 }
 
-/* --- AV CAPABILITIES SECTION WITH MOUSE RADAR SPOTLIGHT --- */
-.av-capabilities-section {
+/* --- AV CAPABILITIES COMPONENT WITH REACTIVE CANVAS --- */
+.av-component-capabilities {
   position: relative;
-  background-color: #080a0f;
+  background: #080a0f;
   border: 1px solid #1a202c;
   border-radius: 4px;
-  padding: 60px 50px;
-  margin: 60px 0;
   overflow: hidden;
-  --mouse-x: 50%;
-  --mouse-y: 50%;
+  margin: 50px 0;
 }
 
-/* Layer 1: Base static tactical dot grid */
-.av-capabilities-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Layer 2: Mouse-tracking spotlight illumination */
-.av-capabilities-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    650px circle at var(--mouse-x) var(--mouse-y),
-    rgba(0, 163, 255, 0.16),
-    rgba(0, 81, 255, 0.05) 45%,
-    transparent 80%
-  );
-  pointer-events: none;
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-/* Ensure contents sit on top of the spotlight */
-.av-cap-grid,
-.reticle-mark {
+.av-bordered-box {
   position: relative;
-  z-index: 3;
+  z-index: 5;
+  padding: 60px 48px;
 }
 
-/* Reticle Marks (+) */
+/* Corner Reticle Marks (+) */
 .reticle-mark {
   position: absolute;
   font-family: monospace;
   font-size: 1.1rem;
   color: var(--accent-cyan);
-  opacity: 0.7;
+  opacity: 0.6;
   user-select: none;
   line-height: 1;
 }
-.reticle-tl { top: 10px; left: 12px; }
-.reticle-tr { top: 10px; right: 12px; }
-.reticle-bl { bottom: 10px; left: 12px; }
-.reticle-br { bottom: 10px; right: 12px; }
+.reticle-tl { top: 12px; left: 14px; }
+.reticle-tr { top: 12px; right: 14px; }
+.reticle-bl { bottom: 12px; left: 14px; }
+.reticle-br { bottom: 12px; right: 14px; }
 
-/* 2-Column Capabilities Grid */
-.av-cap-grid {
+/* 2-Column Grid */
+.av-grid-inner {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 50px;
   align-items: start;
 }
 
-.av-cap-left {
-  position: relative;
+/* Left Column */
+.av-col-left {
   display: flex;
   flex-direction: column;
 }
 
-.cap-pretitle {
+.av-eyebrow {
   font-family: monospace;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
-  color: var(--accent-cyan);
-  margin-bottom: 16px;
+  color: #8b95a8;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
 }
 
-.av-cap-left h2 {
+.av-headline-m {
   font-size: 2.2rem;
   line-height: 1.2;
   font-weight: 800;
   color: #ffffff;
-  margin: 0 0 28px 0;
+  margin: 0 0 32px 0;
   letter-spacing: -0.02em;
 }
 
-.av-outline-btn {
+/* AV Tactical Button with Chamfered Corner Marks */
+.av-tactical-btn {
+  position: relative;
   display: inline-block;
-  align-self: flex-start;
+  padding: 12px 26px;
+  background: rgba(17, 20, 28, 0.7);
+  border: 1px solid #2d3748;
+  color: #ffffff;
+  text-decoration: none;
   font-family: monospace;
   font-size: 0.82rem;
   letter-spacing: 0.1em;
-  color: #ffffff;
-  border: 1px solid #2d3748;
-  padding: 10px 20px;
-  border-radius: 2px;
-  text-decoration: none;
   transition: all 0.2s ease;
-  background: rgba(17, 20, 28, 0.6);
 }
 
-.av-outline-btn:hover {
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
-  background: rgba(0, 163, 255, 0.08);
+.av-tactical-btn:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
 }
 
-.blueprint-graphic {
-  margin-top: 40px;
+.btn-corner {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-color: #38bdf8;
+  border-style: solid;
+  pointer-events: none;
+}
+.btn-corner.tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.btn-corner.tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.btn-corner.bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.btn-corner.br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+.av-vector-wrap {
+  margin-top: 45px;
   width: 100%;
-  max-width: 320px;
-  opacity: 0.7;
+  max-width: 360px;
 }
 
-/* Capabilities Rows */
-.av-cap-right {
-  display: flex;
-  flex-direction: column;
+/* Right Column: Numbered Capabilities List */
+.av-register-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.cap-row {
-  display: flex;
-  align-items: center;
-  padding: 18px 0;
+.av-register-row {
+  position: relative;
   border-bottom: 1px solid #1a202c;
-  text-decoration: none;
-  color: #d1d5db;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
-.cap-row:first-child {
+.av-register-row:first-child {
   border-top: 1px solid #1a202c;
 }
 
-.cap-num {
+.av-row-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.av-row-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  gap: 20px;
+}
+
+.av-num {
   font-family: monospace;
   font-size: 0.85rem;
   color: #64748b;
-  width: 70px;
   flex-shrink: 0;
-  letter-spacing: 0.05em;
   transition: color 0.2s ease;
 }
 
-.cap-title {
-  font-size: 1.05rem;
+.av-title {
+  font-size: 1.1rem;
   font-weight: 500;
-  flex-grow: 1;
+  text-align: right;
+  color: #d1d5db;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.cap-arrow {
-  color: #475569;
-  font-size: 1.1rem;
-  transition: all 0.2s ease;
+/* Hover States (from AV inspect element) */
+.av-register-row:hover .av-num {
+  color: #38bdf8;
 }
 
-.cap-badge {
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: #64748b;
-  border: 1px solid #1e293b;
-  padding: 2px 8px;
-  border-radius: 2px;
+.av-register-row:hover .av-title {
+  color: #38bdf8;
+  transform: translateX(-4px);
 }
 
-.cap-row:hover {
-  color: #ffffff;
-}
-
-.cap-row:hover .cap-num {
-  color: var(--accent-cyan);
-}
-
-.cap-row:hover .cap-title {
-  color: var(--accent-cyan);
-  transform: translateX(6px);
-}
-
-.cap-row:hover .cap-arrow {
-  color: var(--accent-cyan);
-  transform: translateX(4px);
+/* Background Interactive Canvas */
+.av-particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.65;
 }
 
 /* --- DOSSIER CARDS (Featured Projects) --- */
@@ -667,8 +647,8 @@ model-viewer {
 /* --- RESPONSIVE --- */
 @media (max-width: 850px) {
   .hero h1 { font-size: 2.1rem; }
-  .av-cap-grid { grid-template-columns: 1fr; gap: 36px; }
-  .av-capabilities-section { padding: 40px 24px; }
+  .av-grid-inner { grid-template-columns: 1fr; gap: 36px; }
+  .av-bordered-box { padding: 40px 20px; }
   .grid-2 { grid-template-columns: 1fr; }
   .nav-links { display: none; }
 }
