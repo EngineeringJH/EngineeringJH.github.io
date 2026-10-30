@@ -22,20 +22,100 @@
         Undergraduate engineer at Purdue University specializing in CAD mechanism design, rapid CNC/FDM prototyping, and dynamic force-feedback flight controls.
       </p>
       <div class="hero-cta">
-        <a href="#featured-projects" class="btn-primary">View Featured Projects</a>
+        <a href="#capabilities" class="btn-primary">View Capabilities</a>
         <a href="mailto:hennin28@purdue.edu" class="btn-secondary">Contact Direct</a>
       </div>
     </div>
   </section>
 
-  <!-- MAIN WORKSPACE -->
+  <!-- MAIN CONTAINER -->
   <main class="container">
-    
-    <!-- DOMAINS / PROJECT DOSSIERS -->
-    <div class="section-label">[ 01 ] ACTIVE CAPABILITIES</div>
-    <h2 class="section-title">Core Engineering Domains</h2>
 
-    <div class="grid-2" id="featured-projects">
+    <!-- AV CAPABILITIES SECTION WITH MOUSE-TRACKING SPOTLIGHT -->
+    <section class="av-capabilities-section" id="capabilities">
+      
+      <!-- Technical Reticle Marks in Corners -->
+      <span class="reticle-mark reticle-tl">+</span>
+      <span class="reticle-mark reticle-tr">+</span>
+      <span class="reticle-mark reticle-bl">+</span>
+      <span class="reticle-mark reticle-br">+</span>
+
+      <div class="av-cap-grid">
+        
+        <!-- LEFT COLUMN -->
+        <div class="av-cap-left">
+          <div class="cap-pretitle">_CAPABILITIES &amp; FOCUS</div>
+          <h2>Aerospace Systems &amp; Mechanical Design</h2>
+          <a href="cad.html" class="av-outline-btn">VIEW ALL CAD WORK</a>
+          
+          <!-- Faded Blueprint Graphic -->
+          <div class="blueprint-graphic">
+            <svg viewBox="0 0 300 150" fill="none" stroke="rgba(0, 163, 255, 0.15)" stroke-width="1.2">
+              <path d="M 10,75 C 60,30 200,20 280,75 C 200,130 60,120 10,75 Z" />
+              <path d="M 40,75 C 80,45 180,40 250,75 C 180,110 80,105 40,75 Z" stroke-dasharray="3 3" />
+              <line x1="10" y1="75" x2="280" y2="75" stroke="rgba(255, 255, 255, 0.1)" />
+              <circle cx="80" cy="75" r="25" />
+              <line x1="280" y1="75" x2="295" y2="60" />
+              <line x1="280" y1="75" x2="295" y2="90" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: NUMBERED CAPABILITIES LIST -->
+        <div class="av-cap-right">
+          
+          <a href="flight-controls.html" class="cap-row">
+            <span class="cap-num">[ 01 ]</span>
+            <span class="cap-title">Dynamic Flight Simulator Controls (HOTAS)</span>
+            <span class="cap-arrow">&rarr;</span>
+          </a>
+
+          <a href="flight-controls.html" class="cap-row">
+            <span class="cap-num">[ 02 ]</span>
+            <span class="cap-title">High-Torque Direct-Drive BLDC Actuation</span>
+            <span class="cap-arrow">&rarr;</span>
+          </a>
+
+          <div class="cap-row">
+            <span class="cap-num">[ 03 ]</span>
+            <span class="cap-title">Kinematic Gimbal Assembly in Siemens NX</span>
+            <span class="cap-badge">In Dev</span>
+          </div>
+
+          <div class="cap-row">
+            <span class="cap-num">[ 04 ]</span>
+            <span class="cap-title">Transonic Airfoil Flow Analysis (CFD)</span>
+            <span class="cap-badge">Upcoming</span>
+          </div>
+
+          <div class="cap-row">
+            <span class="cap-num">[ 05 ]</span>
+            <span class="cap-title">6061-T6 Aluminum CNC Machining &amp; DFM</span>
+            <span class="cap-arrow">&rarr;</span>
+          </div>
+
+          <div class="cap-row">
+            <span class="cap-num">[ 06 ]</span>
+            <span class="cap-title">FDM/SLA Additive Prototyping &amp; Tolerancing</span>
+            <span class="cap-arrow">&rarr;</span>
+          </div>
+
+          <div class="cap-row">
+            <span class="cap-num">[ 07 ]</span>
+            <span class="cap-title">Telemetry Extraction &amp; Motor Driver Firmware</span>
+            <span class="cap-arrow">&rarr;</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECT DOSSIERS -->
+    <div class="section-label">[ 01 ] ACTIVE HARDWARE</div>
+    <h2 class="section-title">Featured Engineering Dossiers</h2>
+
+    <div class="grid-2">
       
       <!-- Card 1: Flight Controls -->
       <a href="flight-controls.html" class="av-card">
@@ -105,6 +185,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- SCRIPT: Mouse-Tracking Spotlight Radar Effect -->
+  <script>
+    const capSection = document.getElementById('capabilities');
+    if (capSection) {
+      capSection.addEventListener('mousemove', (e) => {
+        const rect = capSection.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        capSection.style.setProperty('--mouse-x', `${x}px`);
+        capSection.style.setProperty('--mouse-y', `${y}px`);
+      });
+    }
+  </script>
 
 </body>
 </html>
